@@ -3,6 +3,18 @@ apply plugin: 'com.android.application'
 android {
     namespace = "com.abdulosama.ghroob"
     compileSdk = rootProject.ext.compileSdkVersion
+    signingConfigs {
+        debug {
+            def keyStorePath = System.getenv("GHROOB_ANDROID_KEYSTORE_PATH")
+            if (keyStorePath) {
+                storeFile file(keyStorePath)
+                storeType "PKCS12"
+                storePassword System.getenv("GHROOB_ANDROID_KEYSTORE_PASSWORD")
+                keyAlias "ghroob-development"
+                keyPassword System.getenv("GHROOB_ANDROID_KEY_PASSWORD")
+            }
+        }
+    }
     defaultConfig {
         applicationId "com.abdulosama.ghroob"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -17,6 +29,9 @@ android {
         }
     }
     buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'

@@ -8,6 +8,7 @@ dist/
 # Household-only assets. Never publish these directories.
 private-assets/fonts/*
 private-assets/audio/*
+private-assets/signing/*
 !private-assets/fonts/.gitkeep
 !private-assets/audio/.gitkeep
 

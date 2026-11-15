@@ -31,8 +31,19 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run android:sync
+      - name: Prepare stable development signing key
+        if: github.event_name != 'pull_request'
+        env:
+          GHROOB_ANDROID_KEYSTORE_B64: ${{ secrets.GHROOB_ANDROID_KEYSTORE_B64 }}
+        run: |
+          test -n "$GHROOB_ANDROID_KEYSTORE_B64"
+          printf '%s' "$GHROOB_ANDROID_KEYSTORE_B64" | base64 --decode > android/ghroob-development.keystore
       - name: Build debug APK
         working-directory: android
+        env:
+          GHROOB_ANDROID_KEYSTORE_PATH: ghroob-development.keystore
+          GHROOB_ANDROID_KEYSTORE_PASSWORD: ${{ secrets.GHROOB_ANDROID_KEYSTORE_PASSWORD }}
+          GHROOB_ANDROID_KEY_PASSWORD: ${{ secrets.GHROOB_ANDROID_KEY_PASSWORD }}
         run: |
           chmod +x gradlew
           ./gradlew test assembleDebug
