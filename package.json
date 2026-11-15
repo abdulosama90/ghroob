@@ -1,8 +1,8 @@
 {
-  "name": "salah-screen",
+  "name": "ghroob",
   "version": "0.1.0",
   "private": true,
-  "description": "A local-first prayer dashboard for kiosks, browsers, and Android displays.",
+  "description": "A local-first, open-source prayer experience for phones, browsers, kiosks, and ambient displays.",
   "type": "module",
   "license": "MPL-2.0",
   "author": "Abdul Osama",

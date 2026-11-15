@@ -1,4 +1,4 @@
-package com.abdulosama.salahscreen;
+package com.abdulosama.ghroob;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,8 +11,8 @@ import org.junit.runner.RunWith;
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
     @Test
-    public void usesSalahScreenApplicationId() {
+    public void usesGhroobApplicationId() {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.abdulosama.salahscreen", appContext.getPackageName());
+        assertEquals("com.abdulosama.ghroob", appContext.getPackageName());
     }
 }

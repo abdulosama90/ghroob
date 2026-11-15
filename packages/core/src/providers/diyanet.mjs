@@ -3,7 +3,7 @@ import { occurrenceId } from "../prayers.mjs";
 const KEYS = ["fajr", "dhuhr", "asr", "maghrib", "isha"];
 
 /**
- * Converts an authenticated Diyanet response into Salah Screen occurrences.
+ * Converts an authenticated Diyanet response into Ghroob occurrences.
  * Network access and credentials stay in the host app so the core never stores
  * or publishes household secrets.
  */

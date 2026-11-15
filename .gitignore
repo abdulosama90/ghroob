@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .tools/
+.cloudflare/
 .DS_Store
 *.log
 

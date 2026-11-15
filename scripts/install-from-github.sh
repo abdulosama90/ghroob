@@ -37,8 +37,8 @@ if [ -z "$RUN_ID" ] || [ "$RUN_ID" = "null" ]; then
   exit 4
 fi
 
-DOWNLOAD_DIR="$(mktemp -d "${TMPDIR:-/tmp}/salah-screen.XXXXXX")"
-gh run download "$RUN_ID" --repo "$REPOSITORY" --name salah-screen-debug-apk --dir "$DOWNLOAD_DIR"
+DOWNLOAD_DIR="$(mktemp -d "${TMPDIR:-/tmp}/ghroob.XXXXXX")"
+gh run download "$RUN_ID" --repo "$REPOSITORY" --name ghroob-debug-apk --dir "$DOWNLOAD_DIR"
 
 if [ -f "$DOWNLOAD_DIR/SHA256SUMS.txt" ]; then
   (cd "$DOWNLOAD_DIR" && shasum -a 256 -c SHA256SUMS.txt)

@@ -15,9 +15,9 @@ if (-not $RunId) {
 }
 if (-not $RunId -or $RunId -eq "null") { throw "No successful Android workflow was found for $Repo." }
 
-$DownloadDir = Join-Path ([System.IO.Path]::GetTempPath()) ("salah-screen-" + [guid]::NewGuid())
+$DownloadDir = Join-Path ([System.IO.Path]::GetTempPath()) ("ghroob-" + [guid]::NewGuid())
 New-Item -ItemType Directory -Path $DownloadDir | Out-Null
-gh run download $RunId --repo $Repo --name salah-screen-debug-apk --dir $DownloadDir
+gh run download $RunId --repo $Repo --name ghroob-debug-apk --dir $DownloadDir
 
 $Apk = Get-ChildItem -Path $DownloadDir -Filter *.apk | Select-Object -First 1
 if (-not $Apk) { throw "The downloaded artifact did not contain an APK. Files remain at $DownloadDir." }
@@ -35,6 +35,6 @@ $Model = (& adb @Target shell getprop ro.product.model).Trim()
 $Sdk = (& adb @Target shell getprop ro.build.version.sdk).Trim()
 Write-Host "Target: $Model, Android API $Sdk"
 & adb @Target install -r $Apk.FullName
-& adb @Target shell am force-stop com.abdulosama.salahscreen
-& adb @Target shell am start -n com.abdulosama.salahscreen/.MainActivity
-Write-Host "Installed and launched Salah Screen. Artifact kept at $DownloadDir"
+& adb @Target shell am force-stop com.abdulosama.ghroob
+& adb @Target shell am start -n com.abdulosama.ghroob/.MainActivity
+Write-Host "Installed and launched Ghroob. Artifact kept at $DownloadDir"

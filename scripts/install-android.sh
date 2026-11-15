@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-PACKAGE_ID="com.abdulosama.salahscreen"
+PACKAGE_ID="com.abdulosama.ghroob"
 ACTIVITY_NAME="${PACKAGE_ID}/.MainActivity"
 ADB_BIN="${SALAH_ADB:-adb}"
 APK_PATH=""
@@ -11,7 +11,7 @@ usage() {
   printf '%s\n' \
     "Usage: scripts/install-android.sh --apk PATH [--serial ADB_SERIAL]" \
     "" \
-    "Installs Salah Screen on an unlocked Android display. It does not root," \
+    "Installs Ghroob on an unlocked Android display. It does not root," \
     "unlock, or factory-reset a stock Echo Show."
 }
 
@@ -55,7 +55,7 @@ case "$SDK" in
 esac
 
 if [ "$SDK" -lt 24 ]; then
-  printf 'Android %s is too old; Salah Screen requires API 24 or newer.\n' "$SDK" >&2
+  printf 'Android %s is too old; Ghroob requires API 24 or newer.\n' "$SDK" >&2
   exit 6
 fi
 
@@ -67,4 +67,4 @@ printf 'APK: %s\n' "$APK_PATH"
 "$ADB_BIN" $ADB_TARGET shell am force-stop "$PACKAGE_ID"
 "$ADB_BIN" $ADB_TARGET shell am start -n "$ACTIVITY_NAME"
 
-printf '%s\n' "Installed and launched Salah Screen. Complete onboarding on the display."
+printf '%s\n' "Installed and launched Ghroob. Complete onboarding on the display."

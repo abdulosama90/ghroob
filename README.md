@@ -1,8 +1,13 @@
-# Salah Screen
+# Ghroob · غروب
 
-Salah Screen is a local-first prayer dashboard for a browser, kiosk display,
-television, or Android device. It began as an Echo Show 5 experiment, but the
-public project deliberately keeps Home Assistant optional.
+Ghroob is a nonprofit, local-first prayer experience for phones, browsers,
+kiosk displays, televisions, and repurposed Android devices. It began as an
+experiment to turn an Echo Show 5 into a calm, prayer-centered ambient screen.
+The public project is device-independent and keeps Home Assistant optional.
+
+- Project home: https://ghroob.dev
+- App home: https://ghroob.app
+- Source: https://github.com/abdulosama90/ghroob
 
 > **Project status:** early public foundation. The standalone web app and prayer
 > ledger work now. The native Android alarm/audio service and official Diyanet
@@ -83,7 +88,7 @@ The planned Chrome new-tab package is described in
 [`docs/chrome-extension-roadmap.md`](docs/chrome-extension-roadmap.md) and will
 reuse the same core rather than duplicate prayer logic.
 
-Private GitHub APK builds and the verified Mac/Linux/Windows installation flow
+GitHub APK builds and the verified Mac/Linux/Windows installation flow
 are documented in [`docs/echo-installation.md`](docs/echo-installation.md).
 
 To refresh the Android shell after changing the web app:

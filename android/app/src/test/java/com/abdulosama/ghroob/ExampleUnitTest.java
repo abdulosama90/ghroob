@@ -1,4 +1,4 @@
-package com.abdulosama.salahscreen;
+package com.abdulosama.ghroob;
 
 import static org.junit.Assert.assertEquals;
 

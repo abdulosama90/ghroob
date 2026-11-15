@@ -1,4 +1,4 @@
-const CACHE = "salah-screen-v2";
+const CACHE = "ghroob-v1";
 const SHELL = ["/manifest.webmanifest", "/icon.svg"];
 
 async function cacheShell() {

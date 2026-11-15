@@ -288,7 +288,7 @@ function renderOnboarding() {
       <div class="horizon" aria-hidden="true"></div>
       <div class="onboarding-card">
         <header>
-          <p class="step">إعداد Salah Screen</p>
+          <p class="step">إعداد غروب</p>
           <h1>مواقيتك تبدأ من مكانك</h1>
           <p>نقترح طريقة مناسبة للدولة، ثم تراجعها أنت مع المسجد أو الجهة المحلية. لن نخفي مصدر الوقت أو نخمنه بصمت.</p>
         </header>

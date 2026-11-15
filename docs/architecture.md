@@ -1,6 +1,6 @@
 # Architecture
 
-Salah Screen follows a local-first design:
+Ghroob follows a local-first design:
 
 ```text
 Prayer-time provider ──> shared prayer core ──> web interface

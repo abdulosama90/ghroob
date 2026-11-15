@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a1235" />
+    <meta name="description" content="Ghroob is a nonprofit, open-source prayer experience for phones, browsers, kiosks, televisions, and ambient displays." />
+    <meta property="og:title" content="Ghroob · Open-source prayer time" />
+    <meta property="og:description" content="A prayer experience that began on an Echo Show and is being opened for every screen." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ghroob.dev" />
+    <title>Ghroob · Open-source prayer time</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div class="page-sky" aria-hidden="true">
+      <span class="orb"></span>
+      <span class="starfield"></span>
+      <span class="haze haze-one"></span>
+      <span class="haze haze-two"></span>
+    </div>
+
+    <header class="nav shell">
+      <a class="brand" href="#top" aria-label="Ghroob home">
+        <span class="brand-mark" aria-hidden="true">غ</span>
+        <span>Ghroob</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#story">Story</a>
+        <a href="#build">Build</a>
+        <a href="#roadmap">Roadmap</a>
+        <a class="nav-github" href="https://github.com/abdulosama90/ghroob">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero shell">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Nonprofit · local-first · open source</p>
+          <h1>Prayer time should feel like part of the room.</h1>
+          <p class="lead">Ghroob turns the daily rhythm of prayer into a calm, living experience—on a phone, browser, kiosk, television, or an old screen given a new purpose.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://github.com/abdulosama90/ghroob">Explore the source <span aria-hidden="true">↗</span></a>
+            <a class="button quiet" href="#story">Why it exists <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="build-note">Early public foundation. Android, web and the shared prayer core are in active development.</p>
+        </div>
+
+        <div class="product-frame" aria-label="Illustration of the Ghroob prayer display">
+          <div class="display-sky">
+            <span class="display-sun"></span>
+            <span class="display-cloud cloud-a"></span>
+            <span class="display-cloud cloud-b"></span>
+            <div class="display-topline">
+              <time id="demo-time">6:31</time>
+              <span dir="rtl">الأحد، ١٥ نوفمبر</span>
+            </div>
+            <div class="display-prayer" dir="rtl">
+              <small>لَمْ تُصَلِّ</small>
+              <strong>صَلَاة المَغْرِب</strong>
+              <p>دخل وقت الصلاة منذ ١١ دقيقة</p>
+            </div>
+            <div class="display-progress"><span></span></div>
+            <div class="display-skyline"></div>
+          </div>
+          <div class="frame-caption"><span>Ambient prayer display</span><span>Web · Android · Kiosk</span></div>
+        </div>
+      </section>
+
+      <section class="origin shell" id="story">
+        <div class="section-number">01</div>
+        <div class="origin-copy">
+          <p class="section-label">The origin</p>
+          <h2>It started with an Echo Show that deserved a better purpose.</h2>
+          <div class="prose-columns">
+            <p>I wanted a screen in my home that did one thing beautifully: make prayer visible. Not another feed, assistant, or dashboard—just the current prayer, the next one, and a gentle sense of time passing.</p>
+            <p>That personal experiment became a larger idea. Old tablets, televisions and smart displays already exist in millions of homes. Ghroob is an open foundation for turning any of them into a prayer-centered part of the space.</p>
+          </div>
+          <p class="signature">— Abdul Osama, creator of Ghroob</p>
+        </div>
+      </section>
+
+      <section class="principles shell">
+        <article>
+          <span>01</span>
+          <h3>Local first</h3>
+          <p>Your location, settings and prayer ledger belong on your device. The core works without an account.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Source aware</h3>
+          <p>Calculation methods and local authorities are explicit. A time should never appear without a clear source.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Screen agnostic</h3>
+          <p>The same prayer logic should serve a phone, Chrome tab, wall display, kiosk, television or repurposed device.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Open by design</h3>
+          <p>The source is public under MPL-2.0, with contribution rules that protect privacy and asset rights.</p>
+        </article>
+      </section>
+
+      <section class="build shell" id="build">
+        <div class="build-heading">
+          <p class="section-label">One core, many surfaces</p>
+          <h2>Build the prayer experience your space needs.</h2>
+          <p>Ghroob separates prayer logic from the screen around it. Communities can improve calculation sources, interfaces, accessibility and device support without rebuilding the entire project.</p>
+        </div>
+
+        <div class="surface-grid">
+          <article class="surface featured">
+            <div class="surface-art phone-art" aria-hidden="true"><span></span></div>
+            <div><small>Mobile</small><h3>iOS & Android</h3><p>A personal prayer experience with notifications, audio and widgets. Planned.</p></div>
+          </article>
+          <article class="surface">
+            <div class="surface-art screen-art" aria-hidden="true"><span></span></div>
+            <div><small>Ambient</small><h3>Screens & kiosks</h3><p>Always-on prayer context for shared rooms and dedicated displays.</p></div>
+          </article>
+          <article class="surface">
+            <div class="surface-art browser-art" aria-hidden="true"><span></span></div>
+            <div><small>Browser</small><h3>Web & new tab</h3><p>An installable web app today, with a Chrome new-tab package on the roadmap.</p></div>
+          </article>
+          <article class="surface">
+            <div class="surface-art core-art" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div><small>Foundation</small><h3>Shared prayer core</h3><p>Tested ordering, tracking, persistence and provider boundaries in reusable modules.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="roadmap shell" id="roadmap">
+        <div>
+          <p class="section-label">Built in the open</p>
+          <h2>Useful now.<br />Honest about what comes next.</h2>
+        </div>
+        <div class="roadmap-list">
+          <article><span class="status live">Working</span><h3>Prayer calculation and onboarding</h3><p>Regional starting recommendations, madhab selection and offline astronomical methods.</p></article>
+          <article><span class="status live">Working</span><h3>Prayer ledger and display modes</h3><p>Interactive tracking, display-only mode, midnight ordering and a daylight-aware interface.</p></article>
+          <article><span class="status next">Next</span><h3>Manual and authority-provided times</h3><p>Let households and communities enter, import or connect the timetable they actually follow.</p></article>
+          <article><span class="status next">Next</span><h3>Native alarms, audio and stores</h3><p>Reliable Android and iOS delivery, boot recovery, audio packs and public store releases.</p></article>
+        </div>
+      </section>
+
+      <section class="contribute shell">
+        <div>
+          <p class="section-label">Contribute</p>
+          <h2>Make prayer technology calmer, more accurate and more open.</h2>
+        </div>
+        <div class="contribute-copy">
+          <p>Designers, engineers, translators, accessibility specialists and prayer-time researchers are welcome. Start with the architecture, contribution guide or an issue.</p>
+          <div class="contribute-links">
+            <a class="button primary light" href="https://github.com/abdulosama90/ghroob">Open GitHub <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="https://github.com/abdulosama90/ghroob/blob/main/CONTRIBUTING.md">Contribution guide <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="shell">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">غ</span><span>Ghroob</span></a>
+      <p>A nonprofit open-source project by <a href="https://abdulosama.com">Abdul Osama</a>.</p>
+      <p><a href="https://ghroob.app">ghroob.app</a> <span>·</span> <a href="https://github.com/abdulosama90/ghroob">MPL-2.0</a></p>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

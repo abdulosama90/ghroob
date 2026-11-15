@@ -1,7 +1,7 @@
 {
-  "name": "Salah Screen",
-  "short_name": "Salah",
-  "description": "A local-first prayer dashboard for shared and dedicated displays.",
+  "name": "Ghroob",
+  "short_name": "Ghroob",
+  "description": "A local-first, open-source prayer experience for every screen.",
   "start_url": "/",
   "display": "fullscreen",
   "orientation": "landscape",

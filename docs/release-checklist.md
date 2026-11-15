@@ -3,7 +3,7 @@
 ## Repository
 
 - [ ] Confirm the final public name and GitHub owner/organization.
-- [ ] Publish only the contents of `salah-screen/`, not the legacy household
+- [ ] Publish only the contents of the `ghroob` repository, not the legacy household
       project or its Git history.
 - [ ] Enable secret scanning, dependency updates, private vulnerability
       reporting, and branch protection.

@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for helping make Salah Screen dependable and calm.
+Thank you for helping make Ghroob dependable and calm.
 
 1. Open an issue before a large change.
 2. Keep the core independent of Home Assistant and any specific Android kiosk.

@@ -1,6 +1,6 @@
 {
-  "appId": "com.abdulosama.salahscreen",
-  "appName": "Salah Screen",
+  "appId": "com.abdulosama.ghroob",
+  "appName": "Ghroob",
   "webDir": "dist/web",
   "backgroundColor": "#0c153a",
   "android": {

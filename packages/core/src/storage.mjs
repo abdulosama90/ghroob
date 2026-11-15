@@ -1,10 +1,12 @@
-const DEFAULT_KEY = "salah-screen:state:v1";
+const DEFAULT_KEY = "ghroob:state:v1";
+const LEGACY_KEYS = ["salah-screen:state:v1"];
 
-export function createBrowserStore(storage = globalThis.localStorage, key = DEFAULT_KEY) {
+export function createBrowserStore(storage = globalThis.localStorage, key = DEFAULT_KEY, legacyKeys = LEGACY_KEYS) {
   return {
     load() {
       try {
-        const raw = storage?.getItem(key);
+        const raw = storage?.getItem(key)
+          ?? legacyKeys.map((legacyKey) => storage?.getItem(legacyKey)).find(Boolean);
         return raw ? JSON.parse(raw) : null;
       } catch {
         return null;
