@@ -24,7 +24,12 @@ public class MainActivity extends BridgeActivity {
     }
 
     private void enterImmersiveMode() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+        // The Echo Show 5 LineageOS build reports Android 11 (API 30), but its
+        // WindowInsets implementation expands the WebView to 960x480 while
+        // leaving the touch surface at 960x421. Use the legacy immersive flags
+        // through Android 11 so rendered controls and touch coordinates remain
+        // aligned. Android 12+ uses the modern insets controller.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             getWindow().setDecorFitsSystemWindows(false);
             WindowInsetsController controller = getWindow().getInsetsController();
             if (controller != null) {
