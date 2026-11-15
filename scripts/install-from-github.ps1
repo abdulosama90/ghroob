@@ -1,7 +1,8 @@
 param(
   [Parameter(Mandatory = $true)][string]$Repo,
   [string]$Serial,
-  [string]$RunId
+  [string]$RunId,
+  [switch]$Kiosk
 )
 
 $ErrorActionPreference = "Stop"
@@ -37,4 +38,16 @@ Write-Host "Target: $Model, Android API $Sdk"
 & adb @Target install -r $Apk.FullName
 & adb @Target shell am force-stop com.abdulosama.ghroob
 & adb @Target shell am start -n com.abdulosama.ghroob/.MainActivity
-Write-Host "Installed and launched Ghroob. Artifact kept at $DownloadDir"
+if ($Kiosk) {
+  $HomeComponent = "com.abdulosama.ghroob/.HomeAlias"
+  & adb @Target shell cmd package set-home-activity $HomeComponent
+  $ResolvedHome = (& adb @Target shell cmd package resolve-activity --brief `
+    -a android.intent.action.MAIN -c android.intent.category.HOME).Trim()
+  if ($ResolvedHome -ne $HomeComponent) {
+    throw "Ghroob did not become the default Home app; resolved Home is $ResolvedHome."
+  }
+  & adb @Target shell am start -n $HomeComponent
+  Write-Host "Installed Ghroob, selected it as Home, and launched kiosk mode. Artifact kept at $DownloadDir"
+} else {
+  Write-Host "Installed and launched Ghroob. Artifact kept at $DownloadDir"
+}

@@ -3,13 +3,15 @@ set -euo pipefail
 
 PACKAGE_ID="com.abdulosama.ghroob"
 ACTIVITY_NAME="${PACKAGE_ID}/.MainActivity"
+HOME_COMPONENT="${PACKAGE_ID}/.HomeAlias"
 ADB_BIN="${SALAH_ADB:-adb}"
 APK_PATH=""
 DEVICE_SERIAL=""
+KIOSK_MODE=false
 
 usage() {
   printf '%s\n' \
-    "Usage: scripts/install-android.sh --apk PATH [--serial ADB_SERIAL]" \
+    "Usage: scripts/install-android.sh --apk PATH [--serial ADB_SERIAL] [--kiosk]" \
     "" \
     "Installs Ghroob on an unlocked Android display. It does not root," \
     "unlock, or factory-reset a stock Echo Show."
@@ -19,6 +21,7 @@ while [ "$#" -gt 0 ]; do
   case "$1" in
     --apk) APK_PATH="${2:-}"; shift 2 ;;
     --serial) DEVICE_SERIAL="${2:-}"; shift 2 ;;
+    --kiosk) KIOSK_MODE=true; shift ;;
     --help|-h) usage; exit 0 ;;
     *) printf 'Unknown argument: %s\n' "$1" >&2; usage >&2; exit 2 ;;
   esac
@@ -67,4 +70,23 @@ printf 'APK: %s\n' "$APK_PATH"
 "$ADB_BIN" $ADB_TARGET shell am force-stop "$PACKAGE_ID"
 "$ADB_BIN" $ADB_TARGET shell am start -n "$ACTIVITY_NAME"
 
-printf '%s\n' "Installed and launched Ghroob. Complete onboarding on the display."
+if [ "$KIOSK_MODE" = true ]; then
+  "$ADB_BIN" $ADB_TARGET shell cmd package set-home-activity "$HOME_COMPONENT"
+  RESOLVED_HOME="$($ADB_BIN $ADB_TARGET shell cmd package resolve-activity --brief \
+    -a android.intent.action.MAIN -c android.intent.category.HOME | tr -d '\r')"
+  case "$RESOLVED_HOME" in
+    "$HOME_COMPONENT") ;;
+    *)
+      printf 'Ghroob did not become the default Home app; resolved Home is %s.\n' \
+        "$RESOLVED_HOME" >&2
+      exit 7
+      ;;
+  esac
+  "$ADB_BIN" $ADB_TARGET shell am start -n "$HOME_COMPONENT"
+fi
+
+if [ "$KIOSK_MODE" = true ]; then
+  printf '%s\n' "Installed Ghroob, selected it as Home, and launched kiosk mode."
+else
+  printf '%s\n' "Installed and launched Ghroob. Complete onboarding on the display."
+fi
