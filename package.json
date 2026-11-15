@@ -1,0 +1,31 @@
+{
+  "name": "salah-screen",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A local-first prayer dashboard for kiosks, browsers, and Android displays.",
+  "type": "module",
+  "license": "MPL-2.0",
+  "author": "Abdul Osama",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite apps/web --host 127.0.0.1 --port 4174",
+    "build": "vite build apps/web --outDir ../../dist/web --emptyOutDir",
+    "preview": "vite preview --host 127.0.0.1 --port 4174 --outDir dist/web",
+    "test": "node --test packages/core/test/*.test.mjs",
+    "android:add": "npm run build && cap add android",
+    "android:sync": "npm run build && cap sync android",
+    "android:open": "cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.6.2",
+    "@capacitor/core": "8.6.2",
+    "@capacitor/geolocation": "8.2.4",
+    "adhan": "4.4.6"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.6.2",
+    "vite": "^7.1.7"
+  }
+}

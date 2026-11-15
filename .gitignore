@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.tools/
+.DS_Store
+*.log
+
+# Household-only assets. Never publish these directories.
+private-assets/fonts/*
+private-assets/audio/*
+!private-assets/fonts/.gitkeep
+!private-assets/audio/.gitkeep
+
+# Local Diyanet credentials and device settings.
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks

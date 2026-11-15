@@ -1,0 +1,12 @@
+{
+  "appId": "com.abdulosama.salahscreen",
+  "appName": "Salah Screen",
+  "webDir": "dist/web",
+  "backgroundColor": "#0c153a",
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#0c153a",
+    "captureInput": true,
+    "webContentsDebuggingEnabled": false
+  }
+}

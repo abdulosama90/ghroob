@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Salah Screen</string>
+    <string name="title_activity_main">Salah Screen</string>
+    <string name="package_name">com.abdulosama.salahscreen</string>
+    <string name="custom_url_scheme">com.abdulosama.salahscreen</string>
+</resources>
