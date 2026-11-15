@@ -41,7 +41,7 @@ jobs:
       - name: Build debug APK
         working-directory: android
         env:
-          GHROOB_ANDROID_KEYSTORE_PATH: ghroob-development.keystore
+          GHROOB_ANDROID_KEYSTORE_PATH: ../ghroob-development.keystore
           GHROOB_ANDROID_KEYSTORE_PASSWORD: ${{ secrets.GHROOB_ANDROID_KEYSTORE_PASSWORD }}
           GHROOB_ANDROID_KEY_PASSWORD: ${{ secrets.GHROOB_ANDROID_KEY_PASSWORD }}
         run: |
