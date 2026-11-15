@@ -90,6 +90,8 @@ reuse the same core rather than duplicate prayer logic.
 
 GitHub APK builds and the verified Mac/Linux/Windows installation flow
 are documented in [`docs/echo-installation.md`](docs/echo-installation.md).
+The first-release path for Apple TestFlight and Google Play is documented in
+[`docs/mobile-publishing.md`](docs/mobile-publishing.md).
 
 To refresh the Android shell after changing the web app:
 
@@ -97,9 +99,9 @@ To refresh the Android shell after changing the web app:
 npm run android:sync
 ```
 
-Building an APK additionally requires JDK 17 and an Android SDK. The current
-workspace does not have those tools yet, so the generated project is source
-complete but not represented as a tested APK.
+Building locally additionally requires JDK 17 and an Android SDK. GitHub
+Actions builds and retains a verified debug APK on every relevant change, so a
+local Android toolchain is optional for early device testing.
 
 ## Contributing
 
