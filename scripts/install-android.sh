@@ -72,7 +72,7 @@ printf 'APK: %s\n' "$APK_PATH"
 
 if [ "$KIOSK_MODE" = true ]; then
   "$ADB_BIN" $ADB_TARGET shell cmd package set-home-activity "$HOME_COMPONENT"
-  RESOLVED_HOME="$($ADB_BIN $ADB_TARGET shell cmd package resolve-activity --brief \
+  RESOLVED_HOME="$("$ADB_BIN" $ADB_TARGET shell cmd package resolve-activity --brief \
     -a android.intent.action.MAIN -c android.intent.category.HOME | tr -d '\r')"
   case "$RESOLVED_HOME" in
     "$HOME_COMPONENT") ;;
